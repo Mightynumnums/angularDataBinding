@@ -4,7 +4,11 @@ import { Component,
         OnChanges,
         SimpleChanges,
         DoCheck,
-        AfterContentInit
+        AfterContentInit, 
+        AfterContentChecked,
+        AfterViewInit,
+        AfterViewChecked,
+        OnDestroy
        } from '@angular/core';
 
 @Component({
@@ -12,7 +16,14 @@ import { Component,
   templateUrl: './server-element.component.html',
   styleUrls: ['./server-element.component.css']
 })
-export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterContentInit {
+export class ServerElementComponent implements OnInit, 
+  OnChanges, 
+  DoCheck, 
+  AfterContentInit,
+  AfterContentChecked,
+  AfterViewInit,
+  AfterViewChecked,
+  OnDestroy {
   @Input('srvElement') element: {type: string, name: string, content:string}
   @Input() name: string
 
@@ -34,7 +45,22 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   }
 
   ngAfterContentInit() {
+    console.log('ngAfterContentInit called')
+  }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked called')
+  }
 
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit is called')
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked is called')
+  }
+
+  ngOnDestroy() {
+    console.log('DESTROYY!!!')
   }
 
 }

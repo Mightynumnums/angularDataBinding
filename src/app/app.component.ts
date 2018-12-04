@@ -27,4 +27,8 @@ export class AppComponent {
   onChangeFirst() {
     this.serverElements[0].name = 'I changed you!'
   }
+
+  destroyComponent() {
+    this.serverElements.splice(0,1)
+  }
 }

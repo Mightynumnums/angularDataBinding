@@ -8,6 +8,7 @@
   <div class="row">
     <div class="col-xs-12">
       <button class="btn btn-secondary" (click)="onChangeFirst()">Change The First Element</button>
+      <button class="btn btn-danger" (click)="destroyComponent()">DESTROY First Component</button>
       <app-server-element *ngFor="let serverElement of serverElements"
       [srvElement]="serverElement"
       [name]="serverElement.name">
